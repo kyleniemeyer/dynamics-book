@@ -1,0 +1,11 @@
+name: dynamics-env
+channels:
+ - conda-forge
+dependencies:
+ - matplotlib
+ - numpy
+ - scipy
+ - pint
+# dependencies for building book
+ - pip:
+    - jupyter-book

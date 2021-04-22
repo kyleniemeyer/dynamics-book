@@ -1,0 +1,19 @@
+
+- file: intro
+
+- part: Getting started
+  chapters:
+    - file: solving-tips
+    
+- part: Particle Kinematics
+  chapters:
+    - file: particle-kinematics/rectilinear
+    - file: particle-kinematics/rectangular
+    - file: particle-kinematics/normal-tangential
+    - file: particle-kinematics/cylindrical
+    - file: particle-kinematics/dependent-relative
+
+- part: Particle Kinetics
+  chapters:
+    - file: particle-kinetics/equation-motion
+    - file: particle-kinetics/normal-tangential
