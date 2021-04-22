@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Normal and tangential coordinates &#8212; Dynamics Notes</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Equation of Motion" href="equation-motion.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dynamics Notes</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Dynamics notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../solving-tips.html">
+   Problem-solving tips
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Particle Kinematics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../particle-kinematics/rectilinear.html">
+   Rectilinear Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../particle-kinematics/rectangular.html">
+   Rectangular coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../particle-kinematics/normal-tangential.html">
+   Normal and tangential coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../particle-kinematics/cylindrical.html">
+   Cylindrical coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../particle-kinematics/dependent-relative.html">
+   Dependent and Relative Motion
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Particle Kinetics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equation-motion.html">
+   Equation of Motion
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Normal and tangential coordinates
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/particle-kinetics/normal-tangential.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kyleniemeyer/dynamics-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kyleniemeyer/dynamics-book/newbackend?urlpath=tree/book/particle-kinetics/normal-tangential.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-race-car-at-banking-angle-no-friction">
+   Example: race car at banking angle (no friction)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-race-car-at-banking-angle-with-friction">
+   Example: race car at banking angle (with friction)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-1-manual-iteration">
+     Method 1: manual iteration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-2-root-scalar">
+     Method 2:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       root_scalar
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="normal-and-tangential-coordinates">
+<h1>Normal and tangential coordinates<a class="headerlink" href="#normal-and-tangential-coordinates" title="Permalink to this headline">¶</a></h1>
+<p>In the normal and tangential coordinate system, the (vector) equation of motion</p>
+<div class="math notranslate nohighlight">
+\[
+\sum \mathbf{F} = m \mathbf{a}
+\]</div>
+<p>decomposes into the three scalar equations for the tangential (<span class="math notranslate nohighlight">\(t\)</span>),
+normal (<span class="math notranslate nohighlight">\(n\)</span>), and binormal (<span class="math notranslate nohighlight">\(b\)</span>) directons:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum F_t &amp;= m a_t = m \dot{v} = m \ddot{s} \\
+\sum F_n &amp;= m a_n = m \frac{v^2}{\rho} \\
+\sum F_b &amp;= m a_b = 0 \;,
+\end{align} 
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_i\)</span> is a force in the <span class="math notranslate nohighlight">\(i\)</span> direction, <span class="math notranslate nohighlight">\(m\)</span> is the particle mass,
+<span class="math notranslate nohighlight">\(v\)</span> is the velocity, and <span class="math notranslate nohighlight">\(\rho\)</span> is the radius of curvature.</p>
+<p>The tangential acceleration <span class="math notranslate nohighlight">\(a_t\)</span> is positive or negative in the direction of motion,
+the normal acceleration <span class="math notranslate nohighlight">\(a_n\)</span> is <strong>always</strong> positive in the normal direction,
+and the binormal acceleration <span class="math notranslate nohighlight">\(a_b\)</span> is <strong>always</strong> zero, because motion lies in the plane
+formed by the normal and tangential directions.</p>
+<div class="section" id="example-race-car-at-banking-angle-no-friction">
+<h2>Example: race car at banking angle (no friction)<a class="headerlink" href="#example-race-car-at-banking-angle-no-friction" title="Permalink to this headline">¶</a></h2>
+<p>A Formula 1 race car of mass <span class="math notranslate nohighlight">\(m\)</span> = 740 kg is traveling on a track at
+constant velocity <span class="math notranslate nohighlight">\(v\)</span> = 60 m/s, where the radius of curvature is <span class="math notranslate nohighlight">\(\rho\)</span> = 400 m.
+What is the banking angle <span class="math notranslate nohighlight">\(\theta\)</span> necessary for the car to avoid sliding as it
+goes around this curve?</p>
+<p>First, let’s draw a free-body diagram for the car:</p>
+<p>Now, write the three scalar equations of motion for the car.
+The equation in the tangential direction does not really tell us much,
+since the car is moving at a constant speed in its direction of motion:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_t = m a_t = m \dot{v} = 0 \;.
+\]</div>
+<p>In the normal direction, the only force is the normal component of the resultant force:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum F_n &amp;= m a_n \\
+N_C \sin \theta &amp;= m \frac{v^2}{\rho}
+\end{align}
+\end{split}\]</div>
+<p>and in the binormal direction, we have both the component of the resultant force and also the car’s weight, but the binormal acceleration is zero:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum F_b &amp;= m a_b = 0 \\
+N_C \cos \theta - m g &amp;= 0 \\
+\rightarrow N_C \cos \theta &amp;= m g
+\end{align} 
+\end{split}\]</div>
+<p>If we divide the latter equation from the former, we can solve for the banking angle:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{N_C \sin \theta}{N_C \cos \theta} &amp;= \frac{m v^2 / \rho}{mg} \\
+\tan \theta &amp;= \frac{v^2}{\rho g} \\
+\therefore \theta &amp;= \tan^{-1} \left(\frac{v^2}{\rho g} \right)
+\end{align}
+\end{split}\]</div>
+<p>For the parameters given:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">mass</span> <span class="o">=</span> <span class="mi">740</span> <span class="c1"># kg</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1"># m/s</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># m</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># m/s^2</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">velocity</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho</span> <span class="o">*</span> <span class="n">g</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;theta =</span><span class="si">{</span><span class="n">theta</span> <span class="o">*</span> <span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1"> .2f</span><span class="si">}</span><span class="s1">°&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>theta = 42.53°
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-race-car-at-banking-angle-with-friction">
+<h2>Example: race car at banking angle (with friction)<a class="headerlink" href="#example-race-car-at-banking-angle-with-friction" title="Permalink to this headline">¶</a></h2>
+<p>Now, consider the same situation, but account for the effect of friction,
+which will counter the car’s motion in the outward direction.
+What is the new banking angle needed to avoid the car sliding in this case?
+Assume the coefficient of static friction is <span class="math notranslate nohighlight">\(\mu_s = 0.2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, we now have to account for components of the friction force in the normal and binormal directions, where the friction force is</p>
+<div class="math notranslate nohighlight">
+\[
+f = \mu_s N_C \;.
+\]</div>
+<p>In the normal direction, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum F_n &amp;= m a_n \\
+N_C \sin \theta + f \cos \theta &amp;= m \frac{v^2}{\rho}
+\end{align}
+\end{split}\]</div>
+<p>and in the binormal direction</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum F_b &amp;= m a_b = 0 \\
+N_C \cos \theta - f \sin \theta - m g &amp;= 0 \\
+\rightarrow N_C \cos \theta - f \sin \theta &amp;= m g
+\end{align} 
+\end{split}\]</div>
+<p>Combining the two equations (again, by dividing the first by the second) and recalling that <span class="math notranslate nohighlight">\(f = \mu_s N_c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{N_C \sin \theta + f \cos \theta}{N_C \cos \theta - f \sin \theta} &amp;= \frac{m v^2 / \rho}{m g} \\
+\frac{\sin \theta + \mu_s \cos \theta}{\cos \theta - \mu_s \sin \theta} &amp;= \frac{v^2}{\rho g} \;.
+\end{align}
+\end{split}\]</div>
+<p>This is our equation to find the banking angle, but unfortunately it has no closed-form solution. So, how do we find <span class="math notranslate nohighlight">\(\theta\)</span>? Using a numerical method!</p>
+<div class="section" id="method-1-manual-iteration">
+<h3>Method 1: manual iteration<a class="headerlink" href="#method-1-manual-iteration" title="Permalink to this headline">¶</a></h3>
+<p>We could first attack this problem by manually guessing and checking different values of <span class="math notranslate nohighlight">\(\theta\)</span>, until the left-hand side of the equation equals the right-hand side.
+For example, trying different values from 20° to 40°:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># need to convert to radians</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Theta   LHS    RHS&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">theta</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">:</span>
+    <span class="n">lhs</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">mu</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">mu</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+    <span class="n">rhs</span> <span class="o">=</span> <span class="n">velocity</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">theta</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1"> 4.1f</span><span class="si">}</span><span class="s1">° </span><span class="si">{</span><span class="n">lhs</span><span class="si">:</span><span class="s1"> 5.3f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">rhs</span><span class="si">:</span><span class="s1"> 5.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Theta   LHS    RHS
+ 20.0°  0.608  0.917
+ 22.0°  0.657  0.917
+ 24.0°  0.708  0.917
+ 26.0°  0.762  0.917
+ 28.0°  0.819  0.917
+ 30.0°  0.879  0.917
+ 32.0°  0.943  0.917
+ 34.0°  1.011  0.917
+ 36.0°  1.084  0.917
+ 38.0°  1.163  0.917
+ 40.0°  1.249  0.917
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, clearly the correct value is between 30° and 32°. A bit more manual iteration shows that the correct angle is just about 31.2°:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="mf">31.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+
+<span class="n">lhs</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">mu</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">mu</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<span class="n">rhs</span> <span class="o">=</span> <span class="n">velocity</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9166501382856723 0.9174311926605505
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-2-root-scalar">
+<h3>Method 2: <code class="docutils literal notranslate"><span class="pre">root_scalar</span></code><a class="headerlink" href="#method-2-root-scalar" title="Permalink to this headline">¶</a></h3>
+<p>Manually solving like this would be quite tedious; fortunately, there are numerical methods for solving scalar equations like this. We refer to this at <strong>root finding</strong>, since to solve we
+formulate the equation like <span class="math notranslate nohighlight">\(F(x) = 0\)</span>, and find the value of the unknown variable that makes the function zero (i.e., the root).</p>
+<p>In this case, we make the equation into the form</p>
+<div class="math notranslate nohighlight">
+\[
+F(\theta) = \frac{\sin \theta + \mu_s \cos \theta}{\cos \theta - \mu_s \sin \theta} - \frac{v^2}{\rho g} = 0 \;,
+\]</div>
+<p>Then, to solve, we can use the <code class="docutils literal notranslate"><span class="pre">root_scalar</span></code> function provided in the <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> module,
+which needs us to provide it with a function that returns <span class="math notranslate nohighlight">\(F(\theta)\)</span> for candidate values of <span class="math notranslate nohighlight">\(\theta\)</span> (with the goal of finding the one that makes <span class="math notranslate nohighlight">\(F(\theta)=0\)</span>), along with a few guess values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">root_scalar</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;This function evaluates the equation for finding theta.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">mu</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">mu</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">-</span>
+        <span class="n">velocity</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span> <span class="n">x1</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;theta =</span><span class="si">{</span><span class="n">sol</span><span class="o">.</span><span class="n">root</span> <span class="o">*</span> <span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1"> .2f</span><span class="si">}</span><span class="s1">°&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>theta = 31.22°
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./particle-kinetics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="equation-motion.html" title="previous page">Equation of Motion</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Kyle Niemeyer<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
